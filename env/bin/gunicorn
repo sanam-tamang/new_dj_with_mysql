@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /media/sanam/187A40E07A40BBEE/1_linux_learning_projects/django_learning_project/1django_learning_deploy_project/djwithmysql/env/bin/python3 "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from gunicorn.app.wsgiapp import run
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(run())
